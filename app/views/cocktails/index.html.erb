@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>List of cocktails</h1>
+  <%= link_to 'Add a new cocktail', new_cocktail_path, class:'btn btn-primary' %>
+   <% @cocktails.each_slice(4) do |cocktails| %>
+  <div class="row">
+    <% cocktails.each do |cocktail| %>
+    <div class="card col">
+      <div class="card-body">
+        <h5 class="card-title"> <%= cocktail.name %></h5>
+        <%= link_to 'More info', cocktail_path(cocktail) %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <% end %>
+
+</div>

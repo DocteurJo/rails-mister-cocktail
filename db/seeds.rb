@@ -16,16 +16,3 @@ drinks_hash['drinks'].each do |ingredient|
   Ingredient.create(name: ingredient['strIngredient1'])
 end
 
-lemon = Ingredient.create(name: "lemon")
-ice = Ingredient.create(name: "ice")
-mint_leaves = Ingredient.create(name: "mint leaves")
-
-capirinha = Cocktail.create(name: 'Capirinha')
-margharita = Cocktail.create(name: 'Margharita')
-gin_tonic = Cocktail.create(name: 'Gin tonic')
-capi_vodka = Cocktail.create(name: 'Capi vodka')
-capiroska = Cocktail.create(name: 'Capiroska')
-mojito = Cocktail.create(name: 'Mojito')
-bloody_mary = Cocktail.create(name: 'Bloody Mary')
-white_russian = Cocktail.create(name: 'White Russian')
-

@@ -1,14 +1,21 @@
+<br>
 <div class="container">
-
-<h1>How to make a <%= @cocktail.name %></h1>
+<div class="card-trip">
+  <%= cl_image_tag @cocktail.photo %>
+  <h1>How to make a <%= @cocktail.name %></h1>
 <%= link_to 'Back to cocktail list', cocktails_path, class:'btn btn-secondary' %>
-
-<ul class="list-group">
-<% @doses.each do |dose| %>
-  <li class="list-group-item"><%= dose.description %> - <%= dose.ingredient.name %> </li> <%= link_to ' delete', dose_path(dose),
-      method: :delete,
-      data: { confirm: "Are you sure?" } %>
-<% end %>
-</ul>
 <%= link_to 'Add a dose',  new_cocktail_dose_path(@cocktail), class:'btn btn-primary' %>
+  <div class="card-trip-infos">
+    <div>
+      <ul class="list-group">
+      <% @doses.each do |dose| %>
+        <li class="list-group-item"><%= dose.description %> - <%= dose.ingredient.name %> </li> <%= link_to ' delete', dose_path(dose),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+      <% end %>
+      </ul>
+    </div>
+  </div>
 </div>
+</div>
+

@@ -1,17 +1,21 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1468072114808-903e572b8ead?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1332&q=80);">
+  <div class="container">
+    <h1>This app <strong>allows</strong> creative people <strong>to make good cocktails</strong>!</h1>
+    <p>Change your life and learn how to make good Caipirinha all around the world.</p>
+    <%= link_to 'Add a cocktail', new_cocktail_path, class:'btn btn-primary' %>
+  </div>
+</div>
+
 <div class="container">
-  <h1>List of cocktails</h1>
-  <%= link_to 'Add a new cocktail', new_cocktail_path, class:'btn btn-primary' %>
-   <% @cocktails.each_slice(4) do |cocktails| %>
-  <div class="row">
-    <% cocktails.each do |cocktail| %>
-    <div class="card col">
-      <div class="card-body">
-        <h5 class="card-title"> <%= cocktail.name %></h5>
-        <%= link_to 'More info', cocktail_path(cocktail) %>
-      </div>
-    </div>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do  %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+        <%= cocktail.name %>
+
+        </div>
+      <% end %>
     <% end %>
   </div>
-  <% end %>
-
 </div>
